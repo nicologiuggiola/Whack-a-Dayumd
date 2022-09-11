@@ -15,27 +15,35 @@
     </style>
 </head>
 <body>
-    <div id="mainmenu" style="width: 100%; height:100%; background-color: darkblue; align-items: center;">
-        <div id="start" style="width: 200px; height:100px;color: white;">Start</div>
+    <div id="main" style="width: 100%; height:100%; background-color: black; align-items: center;">
+        <button id="start" style="width: 150px; height:100px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;color: black;background-color: #7b5023;position: absolute; top: 45%; left: 45%; text-align: center; font-family: monospace; font-size: 20px; cursor: pointer;">START</button>
     </div>
-    <div id="gameoverPanel" style="display: none; width: 100%; height:100%; background-color: black; align-items: center;">
-        <div id="gameover" style="width: 200px; height:100px;color: white;">Back to Menu</div>
-        <div id="retry" style="width: 200px; height:100px;color: white;">Retry Level</div>
+    <div id="goPanel" style="display: none; width: 100%; height:100%; background-color: black; align-items: center;">
+        <button class="back" style="width: 150px; height:100px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;color: black;background-color: #7b5023;position: absolute; top: 45%; left: 38%; text-align: center; font-family: monospace; font-size: 20px; cursor: pointer;">Game Over</button>
+        <button id="retry" style="width: 150px; height:100px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;color: black;background-color: #7b5023;position: absolute; top: 45%; left: 52%; text-align: center; font-family: monospace; font-size: 20px; cursor: pointer;">Try Again</button>
     </div>
-    <div id="victoryPanel" style="display: none; width: 100%; height:100%; background-color: black; align-items: center;">
-        <div id="gameover" style="width: 200px; height:100px;color: white;">Back to Menu</div>
+    <div id="winPanel" style="display: none; width: 100%; height:100%; background-color: black; align-items: center; text-align: center; font-family: monospace;color: white;">
+        <button class="back" style="width: 150px; height:100px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;color: black;background-color: #7b5023;position: absolute; top: 45%; left: 45%; text-align: center; font-family: monospace; font-size: 20px; cursor: pointer;">You Win!</button>
     </div>
-    <div id="pointbar" style="width: 100px; height: 700px; border: 2px solid black; right: 30%; top: 0px ;position:absolute; display:flex; flex-direction: column; background-color: black; display: none;">
-        <div id="prgbar" style="background-color: brown; width: 100%; height: 50%;"></div>
+    <div id="pointbar"style="font-family: monospace;font-size: 16px;width: 100px; height: 500px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b; left: 910px; top: 0px ;position:absolute; display:flex; flex-direction: column; background-color: #7b5023; display: none;">
+        <p style="position: absolute; left: 14.8px;">HOLINESS</p>
+        <div style="margin: 50px auto 50px auto;width: 50%; height: 80%;background-color: black; border-bottom:5px solid #946430; border-right:5px solid #946430;  border-left:5px solid #63401b;border-top:5px solid #63401b; right: 30%; top: 0px ;">
+            <div id="prgbar" style="background-color: brown; width: 100%; height: 50%;"></div>
+        </div>
     </div>
-    <div id="win" style="display: none; width: 500px; height:400px; background-color: black; align-items: center; position: absolute; right: 50%; top:50%;">
-        <div id="gameover" style="width: 200px; height:100px;color: white;">Back to Menu</div>
-        <div id="next" style="width: 200px; height:100px;color: white;">Next Level</div>
+    <div id="win" style="display: none; width: 500px; height:400px; background-color: #7b5023; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;align-items: center; position: absolute; left: 35%; top:25%;">
+        <button class="back" style="width: 150px; height:100px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;color: black;background-color: #7b5023;position: absolute; top: 40%; left: 15%; text-align: center; font-family: monospace; font-size: 20px; cursor: pointer;">Back to Menu</button>
+        <button id="next" style="width: 150px; height:100px; border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;color: black;background-color: #7b5023;position: absolute; top: 40%; left: 55%; text-align: center; font-family: monospace; font-size: 20px; cursor: pointer;">Next Level</button>
     </div>
-    <div id="hammer" style="width: 200px; height:200px; border: 2px solid black; color: red ; right: 10px; position:absolute; display: none;">hammer</div>
-    <div id="shovel" style="width: 200px; height:200px; border: 2px solid black; color: black ;  right: 10px; top: 210px ;position:absolute; display: none;">shovel</div>
-    <div id="powerup" style="width: 200px; height:200px; border: 2px solid black; color: black ;  right: 10px; top: 420px ;position:absolute; display: none;">Fortify Tomb</div>
-    <canvas></canvas>
+    <button id="hammer" style="width: 200px; height:60px; border: 2px solid black; color: red ; background-color: #7b5023; left: 1039.6px; top: 20px ;position:absolute; display: none;border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b; text-align: center; font-family: monospace; font-size: 16px;">HAMMER(A)</button>
+    <button id="shovel" style="width: 200px; height:60px; border: 2px solid black; color: black ;background-color: #7b5023;  left: 1259.6px; top: 20px ;position:absolute; display: none;border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;  text-align: center; font-family: monospace; font-size: 16px;">SHOVEL(S) <div id="shovelCooldown" style="width: 0%; height: 100%; background-color: rgba(128, 128, 128, 0.405); position: absolute;top:0px;left:0px;"></div> </button>
+    <button id="powerup" style="width: 200px; height:60px; border: 2px solid black; color: black ; background-color: #7b5023; left: 1149px; top: 100px ;position:absolute; display: none;border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;  text-align: center; font-family: monospace; font-size: 16px;">FORTIFY TOMB(D) <div id="powerCD" style="width: 0%; height: 100%; background-color: rgba(128, 128, 128, 0.405); position: absolute;top:0px;left:0px;"></div></button>
+    <div id="quest" style="width: 300px; height:100px; border: 2px solid black; color: black ; background-color: #7b5023; left: 1089px; top: 440px ;position:absolute; display: none;border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b;">
+    <div id="q-text" style="padding: 20px;font-family:monospace;"></div>
+<div style="position: absolute;bottom: -40px; font-family: monospace; color: rgb(79, 79, 79);">by Nicolò Giuggiola - Michael Parodi</div></div>
+<button id="try"style="width: 200px; height:60px; border: 2px solid black; color: black ; background-color: #7b5023; left: 1289px; top: 640px ;position:absolute; display: none;border-top:5px solid #946430; border-left:5px solid #946430;  border-right:5px solid #63401b;border-bottom:5px solid #63401b; text-align: center; font-family: monospace; font-size: 16px;">Restart Level(V)</button>
+    <canvas style="background-color: grey; background-image: url('img/grass.png'); background-repeat: repeat;"></canvas>
 </body>
 <script src="app.js"></script>
+<script src="ZzFXMicro.min.js"></script>
 </html>
